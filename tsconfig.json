@@ -15,10 +15,12 @@
   },
   "include": [
     "src/**/*.ts",
-    "./Core/*.ts"
-  ],
+    "./Core/*.ts",
+    "src/**/*.vue"
+    ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "public/css/"
   ]
 }

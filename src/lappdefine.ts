@@ -18,7 +18,7 @@ export const ViewLogicalMaxBottom = -2.0;
 export const ViewLogicalMaxTop = 2.0;
 
 // 相対パス
-export let ResourcesPath = '../../Resources/';
+export let ResourcesPath = '../static/model';
 
 // モデルの後ろにある背景の画像ファイル
 export let BackImageName = 'back_class_normal.png';

@@ -15,7 +15,7 @@
   <!-- Build script -->
   <script src="bundle.js"></script>
   <link type="text/css" href="./css/style.css" />
-</head>
+<script defer src="bundle.js"></script></head>
 
 <body>
   <div id="app" class="ui">
@@ -23,7 +23,7 @@
   </div>
 </body>
 <script src="./js/message.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   var resourcesPath = "./model/"; // 指定资源文件（模型）保存的路径
   var backImageName = ""; // 指定背景图片
   var modelDir = "ChenHai"; // 指定需要加载的模型
@@ -32,8 +32,8 @@
   this.can = document.getElementById("live2d")
   // 创建一个2Dcanvas画布
   //this.context = this.can.getContext('2d')
-  this.can.width = this.app.width
-  this.can.height = this.app.Height
-</script>
+  this.can.width = this.app.offsetWidth
+  this.can.height = this.app.offsetHeight
+</script> -->
 
 </html>
