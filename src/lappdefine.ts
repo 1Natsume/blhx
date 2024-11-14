@@ -18,7 +18,7 @@ export const ViewLogicalMaxBottom = -2.0;
 export const ViewLogicalMaxTop = 2.0;
 
 // 相対パス
-export let ResourcesPath = '../static/model';
+export let ResourcesPath = '../model/';
 
 // モデルの後ろにある背景の画像ファイル
 export let BackImageName = 'back_class_normal.png';
@@ -72,3 +72,9 @@ win.initDefine=function(resourcesPath: string, backImageName: string, modelDir: 
     ModelDirSize = modelDir.length;
 }
 
+export function initDefine(resourcesPath: string, backImageName: string, modelDir: string[]){
+    ResourcesPath = resourcesPath;
+    BackImageName = backImageName;
+    ModelDir = modelDir;
+    ModelDirSize = modelDir.length;
+}

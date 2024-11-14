@@ -39,6 +39,11 @@ const config = {
                 use: ['style-loader', 'css-loader'],
             },
             {
+                // 处理CSS文件
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader','sass-loader'],
+            },
+            {
                 // 处理图片资源
                 test: /\.(png|svg|jpg|jpeg|gif)$/,
                 use: ['file-loader'],
@@ -76,7 +81,7 @@ const config = {
         // useLocalIp: true,
         // writeToDisk: true,
         open: true,
-        inline: true//实时刷新
+        
     },
 }
 module.exports = config

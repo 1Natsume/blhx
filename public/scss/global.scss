@@ -1,0 +1,161 @@
+@charset "utf-8";
+@import "deve";
+
+$asideWidth: 230px;
+$headHeight: 50px;
+$headBackColor: #3a3f51;
+$bottomHeight: 40px;
+$commentFocusColor: rgb(184, 232, 247);
+/*是否隐藏侧边栏*/
+@mixin hideAsideUnit {
+  transform: translateX(-105%);
+  width: 70% !important;
+}
+
+@mixin hideAside {
+  @include deve3 {
+    @include hideAsideUnit();
+  }
+  @include deve2 {
+    @include hideAsideUnit();
+  }
+  @include deve1 {
+    @include hideAsideUnit();
+  }
+}
+
+@mixin showAsideUnit {
+  transform: translateX(0) !important;
+  width: 70% !important;
+}
+
+@mixin showAside {
+  @include deve3 {
+    @include showAsideUnit();
+  }
+  @include deve2 {
+    @include showAsideUnit();
+  }
+  @include deve1 {
+    @include showAsideUnit();
+  }
+}
+
+/*处于小屏幕分辨率*/
+@mixin switchHeadBar {
+  @include deve3 {
+    @content;
+  }
+  @include deve2 {
+    @content;
+  }
+  @include deve1 {
+    @content;
+  }
+}
+
+/*面板宽度*/
+@mixin panelWidth {
+  @include deve-width(100%, 100%, 100%, 100%, 100%, 100%);
+}
+
+/*中央部分靠左位置*/
+@mixin panelLeftUnit {
+  transform: translateX(-$asideWidth);
+  right: -$asideWidth;
+}
+
+@mixin panelLeft {
+  left: $asideWidth;
+  -webkit-transition: all 0.2s ease-in 0.1s;
+  @include deve3 {
+    @include panelLeftUnit();
+  }
+  @include deve2 {
+    @include panelLeftUnit();
+  }
+  @include deve1 {
+    @include panelLeftUnit();
+  }
+}
+
+@mixin ingAsideLeft {
+  @include deve-left(100%, 100%, 100%, 100%, 577px, 716px);
+}
+
+@mixin ingBodyWidth {
+  @include deve-width(100%, 100%, 100%, 100%, 577px, 716px);
+}
+
+/*作品集内侧边栏靠左位置*/
+@mixin worksAsideLeft {
+  @include deve-left(100%, 100%, 100%, 700px, 580px, 720px);
+}
+
+/*作品集内部宽度*/
+@mixin worksBodyWidth {
+  @include deve-width(100%, 100%, 100%, 660px, 71%,70%);
+}
+
+/*文章简介图片宽度*/
+@mixin categoryImgWidth {
+  @include deve-width(110px, 170px, 210px, 215px, 180px, 220px);
+}
+
+
+/*文章简介剩余宽度计算*/
+@mixin categoryBodyCalWidth {
+  @include deve-cal-width(110px, 170px, 210px, 215px, 180px, 220px);
+}
+
+/*文章简介高度*/
+@mixin itemBodyHeight {
+  height: 175px;
+  @include deve1 {
+    height: 105px;
+  }
+}
+
+/*文章标题*/
+@mixin itemTilteStyle {
+  font-size: 22px;
+  margin-bottom: 10px;
+  @include deve1 {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+}
+
+/*文章内容样式*/
+@mixin itemContentStyle {
+  @include deve1 {
+    -webkit-line-clamp: 2 !important;
+    line-height: 21px;
+    font-size: 12px;
+  }
+}
+
+/*右侧框架样式*/
+@mixin itemRightFrame {
+  padding: 20px 15px 25px 20px;
+  @include deve1 {
+    padding: 8px 8px 13px 10px;
+  }
+}
+
+
+/*标签栏*/
+@mixin itemSignStyle {
+  left: 20px;
+  right: 15px;
+  @include deve1 {
+    left: 0px;
+    right: 10px;
+    padding-bottom: 4px;
+    padding-top: 1px;
+    font-size: 10px !important;
+    overflow: hidden; //超出的文本隐藏
+    text-overflow: ellipsis; //溢出用省略号显示
+    white-space: nowrap; //溢出不换行
+  }
+}

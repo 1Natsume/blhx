@@ -3,7 +3,7 @@
     <div class="aa">
         <ul class="menu">
             <li>
-                <div><span>商店</span></div>
+                <div><span><a href="/ship">商店</a></span></div>
             </li>
             <li>船坞</li>
             <li>1</li>
@@ -38,27 +38,42 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { LAppDelegate } from './lappdelegate';
+import { initDefine} from './lappdefine'
+import {useRoute} from 'vue-router'
 export default defineComponent({
-    name :"App",
+    name: "App",
     data() {
         return {
-            
+
         }
     },
     created() {
-        
-        
+
+
     },
     mounted() {
-        
+        this.load()
     },
     methods: {
         load() {
+            var resourcesPath = "./model/"; // 指定资源文件（模型）保存的路径
+            var backImageName = ""; // 指定背景图片
+            var modelDir = "ChenHai"; // 指定需要加载的模型
+            this.app = document.getElementById('live2d-main')
+            this.can = document.getElementById("live2d")
+            initDefine(resourcesPath,backImageName,modelDir.split(','))
+            // 创建一个2Dcanvas画布
+            //this.context = this.can.getContext('2d')
+            this.can.width = this.app.offsetWidth
+            this.can.height = this.app.offsetHeight
             if (LAppDelegate.getInstance().initialize() == false) {
                 return;
             }
             LAppDelegate.getInstance().run();
         }
+    },
+    setup(){
+        var router = useRoute()
     }
 })
 </script>
