@@ -2,16 +2,13 @@ import {createRouter,createWebHistory}  from 'vue-router'
 // import blogRedirect from "../utils/BlogRedirect";
 // import BlogPanel from "../components/BlogPanel";
 import Ship from "../components/Ship.vue";
+import Home from "../components/Home.vue";
 import App from "../App.vue";
 // import CategoryBody from "../components/body/CategoryBody";
 // import ArticleBody from "../components/body/article/ArticleBody";
 // import SubjectBody from "../components/body/SubjectBody";
 // import BlogAuthorBody from "../components/body/author/BlogAuthorBody";
 const  routes = [
-    {
-      path: '/',
-      redirect: '/Home'
-    },
     // {
     //   path: '/c',
     //   name: 'BlogPanel',
@@ -41,14 +38,15 @@ const  routes = [
       component: Ship,
     },
     {
-      path: '/Home',
+      path: '/',
       name: 'Home',
-      component: App,
+      component: Home,
     }
   ]
-  const BASE_URL = '/'
+
+  let base ='/'
   const router = createRouter({
-    history: createWebHistory(BASE_URL),
+    history:createWebHistory(base),
     routes
   })
 

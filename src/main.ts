@@ -4,7 +4,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import '../public/css/style.css'
 import '../public/css/live2d.css'
-import router from './router'
+import router from './router/index'
 // import '../public/scss/deve.scss'
 // import '../public/scss/global.scss'
 // import '../public/scss/style.scss'
