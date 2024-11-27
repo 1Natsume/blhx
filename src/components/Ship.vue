@@ -13,7 +13,10 @@ export default defineComponent(
     {
         name: "Ship",
         data() {
-            tmepListDatas :[]
+            return {
+                tmepListDatas :[]
+            }
+            
         },
         created() {
             this.loadData()
@@ -28,7 +31,7 @@ export default defineComponent(
             },
             loadData() {
                 // 拉取该文件夹下所有文件信息
-                const filesMD = require.context('@/../../docs/', true, /\.md$/);
+                const filesMD = require.context('@/../../public/docs/', true, /\.md$/);
                 const filesMDNames = filesMD.keys();
                 const tmepListDatas = [];
                 filesMDNames.map((item) => {

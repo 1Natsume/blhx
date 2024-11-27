@@ -17,6 +17,9 @@ const config = {
         extensions: ['.ts', '.js'],
         alias: {
             '@framework': path.resolve(__dirname, './Framework/src')
+        },
+        fallback:{
+            "path":require.resolve('path-browserify')
         }
     },
     module: {
@@ -28,6 +31,11 @@ const config = {
                     configFile: path.resolve(process.cwd(), 'tsconfig.json'),
                     appendTsSuffixTo: [/\.vue$/]
                 },
+            },
+            {
+                
+                test: /\.md$/,
+                use: ['html-loader', 'markdown-loader'],
             },
             {
                 test: /\.vue$/,
@@ -65,6 +73,10 @@ const config = {
                 },
             },
         ]
+    },
+    externals:{
+        fs:require('fs'),
+        path:require('path'),
     },
     plugins: [
         new htmlWebpackPlugin({

@@ -1,14 +1,4 @@
 import {createRouter,createWebHistory}  from 'vue-router'
-// import blogRedirect from "../utils/BlogRedirect";
-// import BlogPanel from "../components/BlogPanel";
-import Ship from "../components/Ship.vue";
-import Home from "../components/Home.vue";
-import Detail from "../components/Detail.vue";
-import App from "../App.vue";
-// import CategoryBody from "../components/body/CategoryBody";
-// import ArticleBody from "../components/body/article/ArticleBody";
-// import SubjectBody from "../components/body/SubjectBody";
-// import BlogAuthorBody from "../components/body/author/BlogAuthorBody";
 const  routes = [
     // {
     //   path: '/c',
@@ -36,17 +26,17 @@ const  routes = [
     {
       path: '/ship',
       name: 'Ship',
-      component: Ship,
+      component:()=> import("../components/Ship.vue")
     },
     {
       path: '/',
       name: 'Home',
-      component: Home,
+      component:()=> import("../components/Home.vue")
     },
     {
       path: '/p',
       name: 'Detail',
-      component: Detail,
+      component:()=> import("../components/Detail.vue")
     }
     
   ]

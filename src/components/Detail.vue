@@ -14,7 +14,7 @@ export default defineComponent(
 
         },
         created() {
-            this.$axios.get("@/../../docs/README.md").then(res => {
+            this.$axios.get("../public/docs/README.md").then(res => {
                 const htmlMD = marked(res.data);
 
                 this.articalContent = htmlMD;

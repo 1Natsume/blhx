@@ -22,35 +22,35 @@
         <div class="group_right_item Oilicon">
             <div class="group_right_item_cell">
                 <div class="Oilicon_item">
-                <img src="../../public/img/Oilicon.png">
+                    <img src="../../public/img/Oilicon.png">
+                </div>
+                <div class="Oilicon_item text">
+                    0
+                </div>
             </div>
-            <div class="Oilicon_item text">
-                0
-            </div>
-            </div>
-            
+
         </div>
         <div class="group_right_item Coinicon">
             <div class="group_right_item_cell">
                 <div class="Oilicon_item">
-                <img src="../../public/img/Coinicon.png">
+                    <img src="../../public/img/Coinicon.png">
+                </div>
+                <div class="Oilicon_item text">
+                    0
+                </div>
             </div>
-            <div class="Oilicon_item text">
-                0
-            </div>
-            </div>
-            
+
         </div>
         <div class="group_right_item Ruby">
             <div class="group_right_item_cell">
                 <div class="Oilicon_item">
-                <img src="../../public/img/Ruby.png">
+                    <img src="../../public/img/Ruby.png">
+                </div>
+                <div class="Oilicon_item text">
+                    0
+                </div>
             </div>
-            <div class="Oilicon_item text">
-                0
-            </div>
-            </div>
-            
+
         </div>
     </div>
     <div id="live2d-main" class="live2d-main">
@@ -67,12 +67,15 @@
             <span class="fui-cross"></span>
         </div>
     </div>
+    <div id="loadbar">
+        <img src="../../public/img/load.gif">
+    </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { LAppDelegate } from '../lappdelegate';
-import { initDefine} from '../lappdefine'
-import { RouterLink} from 'vue-router'
+import { initDefine } from '../lappdefine'
+import { RouterLink } from 'vue-router'
 export default defineComponent({
     name: "Home",
     data() {
@@ -86,15 +89,16 @@ export default defineComponent({
     },
     mounted() {
         this.load()
+
     },
     methods: {
         load() {
-            var resourcesPath = "./model/"; // 指定资源文件（模型）保存的路径
+            var resourcesPath = "https://cdn.jsdelivr.net/gh/1Natsume/live2d_model@0.1/"; // 指定资源文件（模型）保存的路径
             var backImageName = ""; // 指定背景图片
             var modelDir = "ChenHai"; // 指定需要加载的模型
             this.app = document.getElementById('live2d-main')
             this.can = document.getElementById("live2d")
-            initDefine(resourcesPath,backImageName,modelDir.split(','))
+            initDefine(resourcesPath, backImageName, modelDir.split(','))
             // 创建一个2Dcanvas画布
             //this.context = this.can.getContext('2d')
             this.can.width = this.app.offsetWidth
@@ -103,8 +107,16 @@ export default defineComponent({
                 return;
             }
             LAppDelegate.getInstance().run();
+            setTimeout(() => {
+
+
+                document.getElementById('loadbar').style.display = 'none'
+
+
+            }, 3000);
+            
         }
     },
-    
+
 })
 </script>
