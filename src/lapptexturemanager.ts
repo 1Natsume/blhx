@@ -69,6 +69,7 @@ export class LAppTextureManager {
 
     // データのオンロードをトリガーにする
     const img = new Image();
+    img.crossOrigin ="anonymous"
     img.onload = (): void => {
       // テクスチャオブジェクトの作成
       const tex: WebGLTexture = gl.createTexture();
@@ -88,7 +89,7 @@ export class LAppTextureManager {
       if (usePremultiply) {
         gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, 1);
       }
-
+      
       // テクスチャにピクセルを書き込む
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
 

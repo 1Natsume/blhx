@@ -18,7 +18,7 @@ export const ViewLogicalMaxBottom = -2.0;
 export const ViewLogicalMaxTop = 2.0;
 
 // 相対パス
-export let ResourcesPath = '../model/';
+export let ResourcesPath = 'https://cdn.jsdelivr.net/gh/1Natsume/live2d_model@0.1/';
 
 // モデルの後ろにある背景の画像ファイル
 export let BackImageName = 'back_class_normal.png';

@@ -31,22 +31,22 @@ export default defineComponent(
             },
             loadData() {
                 // 拉取该文件夹下所有文件信息
-                const filesMD = require.context('@/../../public/docs/', true, /\.md$/);
-                const filesMDNames = filesMD.keys();
-                const tmepListDatas = [];
-                filesMDNames.map((item) => {
-                    console.log(item)
-                    const listObj = {name:'',path:'',children:[],showChild:true};
-                    const listItemS = item.split('/');
-                    if (listItemS.length > 0) {
-                        listObj.name = listItemS[1].replace('.md', '');
-                        listObj.path = item;
-                        listObj.children = [];
-                        listObj.showChild = false;
-                    }
-                    tmepListDatas.push(listObj);
-                    this.tmepListDatas =tmepListDatas;
-                });
+                // const filesMD = require.context('@/../../public/docs/', true, /\.md$/);
+                // const filesMDNames = filesMD.keys();
+                // const tmepListDatas = [];
+                // filesMDNames.map((item) => {
+                //     console.log(item)
+                //     const listObj = {name:'',path:'',children:[],showChild:true};
+                //     const listItemS = item.split('/');
+                //     if (listItemS.length > 0) {
+                //         listObj.name = listItemS[1].replace('.md', '');
+                //         listObj.path = item;
+                //         listObj.children = [];
+                //         listObj.showChild = false;
+                //     }
+                //     tmepListDatas.push(listObj);
+                //     this.tmepListDatas =tmepListDatas;
+                // });
             }
         }
     }
