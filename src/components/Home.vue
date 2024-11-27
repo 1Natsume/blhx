@@ -6,7 +6,7 @@
                 <div><span><router-link to="/ship">船坞</router-link></span></div>
             </li>
             <li>
-                <div><span><a href="/ship">博客</a></span></div>
+                <div><span><router-link to="/p">博客</router-link></span></div>
             </li>
         </ul>
     </div>

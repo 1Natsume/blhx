@@ -5,10 +5,16 @@ import App from './App.vue';
 import '../public/css/style.css'
 import '../public/css/live2d.css'
 import router from './router/index'
+import axios from 'axios'
 // import '../public/scss/deve.scss'
 // import '../public/scss/global.scss'
 // import '../public/scss/style.scss'
-createApp(App).use(router).mount('#app')
+const app = createApp(App)
+ 
+// 创建axios实例并配置
+app.config.globalProperties.$axios = axios
+app.use(router)
+app.mount('#app')
 
 
 // 浏览器装入后的处理（打开页面）

@@ -3,6 +3,7 @@ import {createRouter,createWebHistory}  from 'vue-router'
 // import BlogPanel from "../components/BlogPanel";
 import Ship from "../components/Ship.vue";
 import Home from "../components/Home.vue";
+import Detail from "../components/Detail.vue";
 import App from "../App.vue";
 // import CategoryBody from "../components/body/CategoryBody";
 // import ArticleBody from "../components/body/article/ArticleBody";
@@ -41,7 +42,13 @@ const  routes = [
       path: '/',
       name: 'Home',
       component: Home,
+    },
+    {
+      path: '/p',
+      name: 'Detail',
+      component: Detail,
     }
+    
   ]
 
   let base ='/'
