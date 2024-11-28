@@ -13,9 +13,9 @@
     transform: translateY(0);
 } */
 @media (max-width: 768px) {
-    .live2d-main {
+    /* .live2d-main {
         display: none;
-    }
+    } */
 }
 .live2d-tips {
     opacity: 0;

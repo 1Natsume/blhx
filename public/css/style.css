@@ -263,3 +263,13 @@ ul{
     height: 100%;
     margin: 0 auto;
 }
+@media screen and (max-width:560px) {
+    #loadbar img{
+        position: relative;
+        top: 20%;
+        height: 50%;
+    }
+    .group_right{
+        display: none;
+    }
+}
